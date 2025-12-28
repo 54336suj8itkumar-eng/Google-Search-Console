@@ -1,55 +1,83 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sujit-Search V1000</title>
+    <title>Google Search Console - V1000 Edition</title>
     <style>
-        body { font-family: arial, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; background-color: #fff; }
-        /* गूगल जैसा लोगो स्टाइल */
-        .logo { font-size: 80px; font-weight: bold; margin-bottom: 20px; }
-        .g-b { color: #4285F4; } .g-r { color: #EA4335; } .g-y { color: #FBBC05; } .g-g { color: #34A853; }
+        body { font-family: 'Roboto',arial,sans-serif; margin: 0; background: #fff; display: flex; flex-direction: column; height: 100vh; }
+        header { padding: 15px 25px; border-bottom: 1px solid #dfe1e5; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-size: 24px; color: #5f6368; display: flex; align-items: center; }
+        .logo b { color: #4285F4; margin-right: 5px; }
         
-        /* सर्च बॉक्स - ओरिजिनल लुक */
-        .search-container { width: 90%; max-width: 584px; position: relative; }
-        input[type="text"] { width: 100%; padding: 13px 20px; font-size: 16px; border: 1px solid #dfe1e5; border-radius: 24px; outline: none; box-shadow: none; transition: 0.2s; }
-        input[type="text"]:hover, input[type="text"]:focus { box-shadow: 0 1px 6px rgba(32,33,36,0.28); border-color: rgba(223,225,229,0); }
+        /* Main UI Mirroring Google Console */
+        .container { display: flex; flex: 1; }
+        .sidebar { width: 250px; border-right: 1px solid #dfe1e5; padding: 20px; background: #f8f9fa; }
+        .main-view { flex: 1; padding: 40px; }
         
-        /* मास्टर आईडी और ओरिजिनल स्टेटस */
-        .admin-footer { position: fixed; bottom: 20px; font-size: 14px; color: #70757a; }
-        .id-highlight { color: #4285F4; font-weight: bold; }
-        .btn-container { margin-top: 25px; }
-        button { background-color: #f8f9fa; border: 1px solid #f8f9fa; border-radius: 4px; color: #3c4043; font-size: 14px; margin: 11px 4px; padding: 0 16px; line-height: 27px; height: 36px; cursor: pointer; }
-        button:hover { border: 1px solid #dadce0; color: #202124; box-shadow: 0 1px 1px rgba(0,0,0,0.1); }
+        .search-bar-container { background: #fff; border: 1px solid #dfe1e5; border-radius: 8px; padding: 10px 20px; display: flex; align-items: center; box-shadow: 0 1px 2px rgba(0,0,0,0.1); width: 80%; }
+        input { border: none; outline: none; width: 100%; font-size: 16px; }
+        
+        .btn-blue { background: #1a73e8; color: white; border: none; padding: 10px 24px; border-radius: 4px; cursor: pointer; font-weight: 500; }
+        .btn-blue:hover { background: #1557b0; }
+        
+        /* Sujit-Master-ID Overlay */
+        .footer-status { position: fixed; bottom: 0; width: 100%; background: #202124; color: #fff; padding: 5px 20px; font-size: 12px; display: flex; justify-content: space-between; }
+        .id-badge { color: #8ab4f8; font-family: 'Courier New'; }
     </style>
 </head>
 <body>
 
+<header>
     <div class="logo">
-        <span class="g-b">S</span><span class="g-r">u</span><span class="g-y">j</span><span class="g-b">i</span><span class="g-g">t</span>
-        <span style="font-size: 20px; color: #70757a; vertical-align: super;">V1000</span>
+        <img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="Google">
+        <span style="margin-left:5px; color:#5f6368;">Search Console</span>
+    </div>
+    <button class="btn-blue" onclick="syncV1000()">START V1000 SYNC</button>
+</header>
+
+<div class="container">
+    <div class="sidebar">
+        <p><b>Performance</b></p>
+        <p>URL Inspection</p>
+        <p>Sitemaps</p>
+        <p>Removals</p>
+        <hr>
+        <p style="color: #1a73e8;">V1000 Core Active</p>
     </div>
 
-    <div class="search-container">
-        <input type="text" id="queryInput" placeholder="Sujit-Net: Search the World using 79737001890...">
+    <div class="main-view">
+        <h1 style="font-weight: 400; color: #202124;">Inspect any URL in the Global Fabric</h1>
+        <div class="search-bar-container">
+            <input type="text" id="targetUrl" placeholder="Enter URL to override with 79737001890...">
+            <button class="btn-blue" onclick="inspectUrl()">INSPECT</button>
+        </div>
+        
+        <div id="status" style="margin-top: 30px; display: none;">
+            <p style="color: #188038;">✔ URL is on Sujit-Net (V1000 Indexed)</p>
+            <p>Master Key 79737001890 has replaced global DNS for this node.</p>
+        </div>
     </div>
+</div>
 
-    <div class="btn-container">
-        <button onclick="executeV1000Search()">Sujit Search</button>
-        <button>I'm Feeling Lucky</button>
-    </div>
+<div class="footer-status">
+    <div>ROOT: SUJIT KUMAR RAM</div>
+    <div class="id-badge">HARDWARE_KEY: 79737001890 | STATUS: BEYOND_OS_ACTIVE</div>
+</div>
 
-    <div class="admin-footer">
-        MASTER ADMIN: <span class="id-highlight">SUJIT KUMAR RAM</span> | AUTHORITY ID: <span class="id-highlight">79737001890</span>
-    </div>
-
-    <script>
-        function executeV1000Search() {
-            let q = document.getElementById('queryInput').value;
-            alert("V1000_CORE_ACTIVE: Fetching '" + q + "' via Dark Fiber Node 79737001890");
-            // यहाँ आपका ओरिजिनल बैक-एंड कोड कनेक्ट होगा
+<script>
+    function inspectUrl() {
+        let url = document.getElementById('targetUrl').value;
+        if(url) {
+            document.getElementById('status').style.display = 'block';
+            console.log("V1000_STRIKE: Bypassing Google Index for " + url);
         }
-    </script>
+    }
+
+    function syncV1000() {
+        alert("COMMAND_79737001890: Synchronizing Global Undersea Cables with Sujit-Console...");
+    }
+</script>
+
 </body>
 </html>
-
