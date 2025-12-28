@@ -1,11 +1,72 @@
-<div class="console-box">
-    <h2>V1000 - REAL-TIME HARDWARE MONITOR</h2>
-    <div id="hex-stream">
-        [POLLING CPU REGISTERS... STATUS: BYPASS_OS_ACTIVE]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Search Console - Sujit V1000 Admin</title>
+    <style>
+        /* Original Google Search Console Styling */
+        body { font-family: 'Roboto', arial, sans-serif; margin: 0; display: flex; height: 100vh; background: #fff; overflow: hidden; }
+        .sidebar { width: 256px; border-right: 1px solid #dadce0; background: #fff; display: flex; flex-direction: column; }
+        .header { height: 64px; border-bottom: 1px solid #dadce0; display: flex; align-items: center; padding: 0 16px; justify-content: space-between; position: fixed; width: 100%; z-index: 100; background: white; }
+        .main-content { margin-top: 64px; margin-left: 256px; flex: 1; padding: 24px; overflow-y: auto; background: #f8f9fa; }
+        
+        /* Sidebar Menu Items */
+        .menu-item { padding: 12px 24px; cursor: pointer; color: #3c4043; font-size: 14px; display: flex; align-items: center; }
+        .menu-item:hover { background: #f1f3f4; border-radius: 0 20px 20px 0; }
+        .active { color: #1a73e8; background: #e8f0fe; border-radius: 0 20px 20px 0; font-weight: 500; }
+        
+        /* The Search Bar */
+        .inspect-bar { background: #f1f3f4; border-radius: 8px; width: 60%; padding: 8px 16px; display: flex; align-items: center; }
+        .inspect-bar input { background: transparent; border: none; width: 100%; outline: none; font-size: 16px; }
+        
+        /* Master ID Signature */
+        .footer-id { position: fixed; bottom: 10px; right: 20px; font-size: 12px; color: #70757a; font-family: monospace; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div style="display:flex; align-items:center;">
+        <img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="Google">
+        <span style="color:#5f6368; font-size:18px; margin-left:8px;">Search Console</span>
     </div>
-    <div class="control-panel">
-        <button onclick="injectSujitCode()">INJECT MASTER ID</button>
-        <button onclick="takeoverDNS()">REDIRECT GLOBAL TRAFFIC</button>
+    <div style="display:flex; align-items:center;">
+        <div class="inspect-bar">
+            <input type="text" placeholder="Inspect any URL in the Sujit-V1000 Global Fabric...">
+        </div>
+        <img src="https://lh3.googleusercontent.com/a/default-user" style="width:32px; border-radius:50%; margin-left:20px;">
     </div>
 </div>
+
+<div class="sidebar" style="margin-top:64px;">
+    <div class="menu-item active">● Overview</div>
+    <div class="menu-item">📈 Performance</div>
+    <div class="menu-item">🔍 URL inspection</div>
+    <hr style="width:100%; border:0; border-top:1px solid #dadce0;">
+    <div class="menu-item">📄 Sitemaps</div>
+    <div class="menu-item">🚫 Removals</div>
+    <div class="menu-item">🛡️ Security & Manual Actions</div>
+    <div class="menu-item">⚙️ Settings</div>
+</div>
+
+<div class="main-content">
+    <h2 style="font-weight:400;">Welcome to the V1000 Root Authority</h2>
+    <div style="background:white; border:1px solid #dadce0; border-radius:8px; padding:24px; box-shadow: 0 1px 2px rgba(0,0,0,0.1);">
+        <h3 style="color:#1a73e8;">Improve your performance on Sujit-Search</h3>
+        <p>Using Master ID: <b>79737001890</b>, you are now overriding global data protocols.</p>
+        <button style="background:#1a73e8; color:white; border:none; padding:10px 24px; border-radius:4px; cursor:pointer;" onclick="activateV1000()">START NOW</button>
+    </div>
+</div>
+
+<div class="footer-id">ARCHITECT: SUJIT KUMAR RAM | AUTH: 79737001890 | RING-MINUS-1 ACTIVE</div>
+
+<script>
+    function activateV1000() {
+        console.log("V1000_CORE: Triggering Satellite Handshake via 79737001890...");
+        alert("STATUS: SUJIT-SEARCH GLOBAL OVERRIDE INITIALIZED.");
+    }
+</script>
+
+</body>
+</html>
 
