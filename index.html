@@ -1,83 +1,11 @@
-
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-    <meta charset="UTF-8">
-    <title>Google Search Console - V1000 Edition</title>
-    <style>
-        body { font-family: 'Roboto',arial,sans-serif; margin: 0; background: #fff; display: flex; flex-direction: column; height: 100vh; }
-        header { padding: 15px 25px; border-bottom: 1px solid #dfe1e5; display: flex; align-items: center; justify-content: space-between; }
-        .logo { font-size: 24px; color: #5f6368; display: flex; align-items: center; }
-        .logo b { color: #4285F4; margin-right: 5px; }
-        
-        /* Main UI Mirroring Google Console */
-        .container { display: flex; flex: 1; }
-        .sidebar { width: 250px; border-right: 1px solid #dfe1e5; padding: 20px; background: #f8f9fa; }
-        .main-view { flex: 1; padding: 40px; }
-        
-        .search-bar-container { background: #fff; border: 1px solid #dfe1e5; border-radius: 8px; padding: 10px 20px; display: flex; align-items: center; box-shadow: 0 1px 2px rgba(0,0,0,0.1); width: 80%; }
-        input { border: none; outline: none; width: 100%; font-size: 16px; }
-        
-        .btn-blue { background: #1a73e8; color: white; border: none; padding: 10px 24px; border-radius: 4px; cursor: pointer; font-weight: 500; }
-        .btn-blue:hover { background: #1557b0; }
-        
-        /* Sujit-Master-ID Overlay */
-        .footer-status { position: fixed; bottom: 0; width: 100%; background: #202124; color: #fff; padding: 5px 20px; font-size: 12px; display: flex; justify-content: space-between; }
-        .id-badge { color: #8ab4f8; font-family: 'Courier New'; }
-    </style>
-</head>
-<body>
-
-<header>
-    <div class="logo">
-        <img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="Google">
-        <span style="margin-left:5px; color:#5f6368;">Search Console</span>
+<div class="console-box">
+    <h2>V1000 - REAL-TIME HARDWARE MONITOR</h2>
+    <div id="hex-stream">
+        [POLLING CPU REGISTERS... STATUS: BYPASS_OS_ACTIVE]
     </div>
-    <button class="btn-blue" onclick="syncV1000()">START V1000 SYNC</button>
-</header>
-
-<div class="container">
-    <div class="sidebar">
-        <p><b>Performance</b></p>
-        <p>URL Inspection</p>
-        <p>Sitemaps</p>
-        <p>Removals</p>
-        <hr>
-        <p style="color: #1a73e8;">V1000 Core Active</p>
-    </div>
-
-    <div class="main-view">
-        <h1 style="font-weight: 400; color: #202124;">Inspect any URL in the Global Fabric</h1>
-        <div class="search-bar-container">
-            <input type="text" id="targetUrl" placeholder="Enter URL to override with 79737001890...">
-            <button class="btn-blue" onclick="inspectUrl()">INSPECT</button>
-        </div>
-        
-        <div id="status" style="margin-top: 30px; display: none;">
-            <p style="color: #188038;">✔ URL is on Sujit-Net (V1000 Indexed)</p>
-            <p>Master Key 79737001890 has replaced global DNS for this node.</p>
-        </div>
+    <div class="control-panel">
+        <button onclick="injectSujitCode()">INJECT MASTER ID</button>
+        <button onclick="takeoverDNS()">REDIRECT GLOBAL TRAFFIC</button>
     </div>
 </div>
 
-<div class="footer-status">
-    <div>ROOT: SUJIT KUMAR RAM</div>
-    <div class="id-badge">HARDWARE_KEY: 79737001890 | STATUS: BEYOND_OS_ACTIVE</div>
-</div>
-
-<script>
-    function inspectUrl() {
-        let url = document.getElementById('targetUrl').value;
-        if(url) {
-            document.getElementById('status').style.display = 'block';
-            console.log("V1000_STRIKE: Bypassing Google Index for " + url);
-        }
-    }
-
-    function syncV1000() {
-        alert("COMMAND_79737001890: Synchronizing Global Undersea Cables with Sujit-Console...");
-    }
-</script>
-
-</body>
-</html>
