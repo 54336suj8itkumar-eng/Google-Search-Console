@@ -2,71 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Google Search Console - Sujit V1000 Admin</title>
+    <title>Google Search Console - Master V1000</title>
     <style>
-        /* Original Google Search Console Styling */
-        body { font-family: 'Roboto', arial, sans-serif; margin: 0; display: flex; height: 100vh; background: #fff; overflow: hidden; }
-        .sidebar { width: 256px; border-right: 1px solid #dadce0; background: #fff; display: flex; flex-direction: column; }
-        .header { height: 64px; border-bottom: 1px solid #dadce0; display: flex; align-items: center; padding: 0 16px; justify-content: space-between; position: fixed; width: 100%; z-index: 100; background: white; }
-        .main-content { margin-top: 64px; margin-left: 256px; flex: 1; padding: 24px; overflow-y: auto; background: #f8f9fa; }
+        /* बिलकुल असली गूगल जैसा फील और जटिल CSS */
+        body { font-family: 'Roboto', sans-serif; margin: 0; background: #fff; display: flex; flex-direction: column; height: 100vh; }
+        .top-nav { height: 64px; border-bottom: 1px solid #dadce0; display: flex; align-items: center; padding: 0 16px; justify-content: space-between; background: white; z-index: 1000; }
+        .main-container { display: flex; flex: 1; overflow: hidden; }
+        .sidebar { width: 280px; border-right: 1px solid #dadce0; overflow-y: auto; background: #fff; transition: all 0.3s; }
+        .content-area { flex: 1; overflow-y: auto; padding: 24px; background: #f8f9fa; }
         
-        /* Sidebar Menu Items */
-        .menu-item { padding: 12px 24px; cursor: pointer; color: #3c4043; font-size: 14px; display: flex; align-items: center; }
-        .menu-item:hover { background: #f1f3f4; border-radius: 0 20px 20px 0; }
-        .active { color: #1a73e8; background: #e8f0fe; border-radius: 0 20px 20px 0; font-weight: 500; }
+        /* असली बटन और मेनू स्टाइल्स */
+        .nav-item { padding: 12px 24px; display: flex; align-items: center; cursor: pointer; font-size: 14px; color: #3c4043; }
+        .nav-item:hover { background: #f1f3f4; border-radius: 0 24px 24px 0; }
+        .nav-item.active { background: #e8f0fe; color: #1a73e8; font-weight: 500; border-radius: 0 24px 24px 0; }
         
-        /* The Search Bar */
-        .inspect-bar { background: #f1f3f4; border-radius: 8px; width: 60%; padding: 8px 16px; display: flex; align-items: center; }
-        .inspect-bar input { background: transparent; border: none; width: 100%; outline: none; font-size: 16px; }
-        
-        /* Master ID Signature */
-        .footer-id { position: fixed; bottom: 10px; right: 20px; font-size: 12px; color: #70757a; font-family: monospace; }
+        /* Verification Box (as seen in your image 30150.jpg) */
+        .property-card { background: white; border: 1px solid #dadce0; border-radius: 8px; padding: 24px; width: 45%; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body>
 
-<div class="header">
+<div class="top-nav">
     <div style="display:flex; align-items:center;">
+        <span style="font-size:24px; color:#5f6368; cursor:pointer; margin-right:15px;">☰</span>
         <img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="Google">
-        <span style="color:#5f6368; font-size:18px; margin-left:8px;">Search Console</span>
+        <span style="font-size:18px; color:#5f6368; margin-left:8px;">Search Console</span>
     </div>
     <div style="display:flex; align-items:center;">
-        <div class="inspect-bar">
-            <input type="text" placeholder="Inspect any URL in the Sujit-V1000 Global Fabric...">
+        <span style="margin-right:20px; color:#5f6368;">ID: 79737001890</span>
+        <img src="YOUR_PROFIL_PIC_URL" style="width:32px; height:32px; border-radius:50%; background:#ccc;">
+    </div>
+</div>
+
+<div class="main-container">
+    <div class="sidebar" id="sidebar">
+        <div class="nav-item active" onclick="loadPage('overview')">📊 Overview</div>
+        <div class="nav-item" onclick="loadPage('performance')">📈 Performance</div>
+        <div class="nav-item" onclick="loadPage('inspection')">🔍 URL inspection</div>
+        <hr style="border:0; border-top:1px solid #dadce0; margin:10px 0;">
+        <div class="nav-item" onclick="loadPage('sitemaps')">📄 Sitemaps</div>
+        <div class="nav-item" onclick="loadPage('security')">🛡️ Security & Manual Actions</div>
+    </div>
+
+    <div class="content-area" id="mainContent">
+        <h2 style="font-weight:400; text-align:center;">Welcome to Google Search Console</h2>
+        <p style="text-align:center; color:#5f6368;">To start, select property type</p>
+        <div style="display:flex; justify-content:space-around; margin-top:40px;">
+            <div class="property-card">
+                <h3>Domain</h3>
+                <input type="text" placeholder="example.com" style="width:100%; padding:10px; margin:15px 0; border:1px solid #dadce0; border-radius:4px;">
+                <button style="background:#1a73e8; color:white; border:none; padding:10px 20px; border-radius:4px; cursor:pointer;" onclick="verifyDomain()">CONTINUE</button>
+            </div>
+            <div class="property-card">
+                <h3>URL prefix</h3>
+                <input type="text" placeholder="https://www.example.com" style="width:100%; padding:10px; margin:15px 0; border:1px solid #dadce0; border-radius:4px;">
+                <button style="background:#1a73e8; color:white; border:none; padding:10px 20px; border-radius:4px; cursor:pointer;">CONTINUE</button>
+            </div>
         </div>
-        <img src="https://lh3.googleusercontent.com/a/default-user" style="width:32px; border-radius:50%; margin-left:20px;">
     </div>
 </div>
-
-<div class="sidebar" style="margin-top:64px;">
-    <div class="menu-item active">● Overview</div>
-    <div class="menu-item">📈 Performance</div>
-    <div class="menu-item">🔍 URL inspection</div>
-    <hr style="width:100%; border:0; border-top:1px solid #dadce0;">
-    <div class="menu-item">📄 Sitemaps</div>
-    <div class="menu-item">🚫 Removals</div>
-    <div class="menu-item">🛡️ Security & Manual Actions</div>
-    <div class="menu-item">⚙️ Settings</div>
-</div>
-
-<div class="main-content">
-    <h2 style="font-weight:400;">Welcome to the V1000 Root Authority</h2>
-    <div style="background:white; border:1px solid #dadce0; border-radius:8px; padding:24px; box-shadow: 0 1px 2px rgba(0,0,0,0.1);">
-        <h3 style="color:#1a73e8;">Improve your performance on Sujit-Search</h3>
-        <p>Using Master ID: <b>79737001890</b>, you are now overriding global data protocols.</p>
-        <button style="background:#1a73e8; color:white; border:none; padding:10px 24px; border-radius:4px; cursor:pointer;" onclick="activateV1000()">START NOW</button>
-    </div>
-</div>
-
-<div class="footer-id">ARCHITECT: SUJIT KUMAR RAM | AUTH: 79737001890 | RING-MINUS-1 ACTIVE</div>
 
 <script>
-    function activateV1000() {
-        console.log("V1000_CORE: Triggering Satellite Handshake via 79737001890...");
-        alert("STATUS: SUJIT-SEARCH GLOBAL OVERRIDE INITIALIZED.");
+    function loadPage(page) {
+        // असली काम: क्लिक करने पर कंटेंट बदलना
+        let content = document.getElementById('mainContent');
+        if(page === 'performance') {
+            content.innerHTML = "<h1>Performance Report</h1><p>Master ID 79737001890 is analyzing global traffic...</p>";
+        } else if(page === 'sitemaps') {
+            content.innerHTML = "<h1>Sitemaps</h1><p>Submit your global fabric map here.</p>";
+        }
+        // अन्य पेजों के लिए भी इसी तरह कोड जोड़ें
+    }
+
+    function verifyDomain() {
+        alert("V1000 ENGINE: Verifying domain via ID 79737001890...");
     }
 </script>
 
 </body>
 </html>
-
