@@ -1,78 +1,49 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Search Console - Sujit Master 79737001890</title>
+    <title>Google Clone</title>
     <style>
-        /* बिलकुल वैसा ही जैसा फोटो 30150.jpg में है */
-        body { font-family: 'Google Sans', Roboto, Arial, sans-serif; margin: 0; background-color: #fff; color: #3c4043; }
-        .header { height: 64px; padding: 0 16px; border-bottom: 1px solid #dadce0; display: flex; align-items: center; position: sticky; top: 0; background: #fff; z-index: 100; }
-        .main-container { max-width: 1000px; margin: 40px auto; padding: 0 20px; text-align: center; }
+        body { font-family: arial, sans-serif; margin: 0; display: flex; flex-direction: column; height: 100vh; }
+        nav { display: flex; justify-content: flex-end; padding: 15px; font-size: 13px; }
+        nav a { margin-right: 15px; color: rgba(0,0,0,0.87); text-decoration: none; }
+        nav a:hover { text-decoration: underline; }
         
-        h1 { font-size: 28px; font-weight: 400; margin-bottom: 8px; color: #5f6368; }
-        .subtitle { font-size: 14px; color: #5f6368; margin-bottom: 40px; }
-
-        /* Property Selection Cards */
-        .card-wrapper { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; }
-        .card { border: 1px solid #dadce0; border-radius: 8px; padding: 24px; width: 340px; transition: box-shadow 0.3s; text-align: left; }
-        .card:hover { box-shadow: 0 1px 6px rgba(32,33,36,0.28); }
-        .icon-box { width: 48px; height: 48px; background: #f1f3f4; border-radius: 50%; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; }
-
-        input[type="text"] { width: 100%; padding: 12px; margin: 20px 0; border: 1px solid #dadce0; border-radius: 4px; box-sizing: border-box; font-size: 14px; }
-        .btn-continue { background-color: #fff; border: 1px solid #dadce0; color: #1a73e8; padding: 10px 24px; border-radius: 4px; font-weight: 500; cursor: pointer; text-transform: uppercase; font-size: 14px; width: 100%; }
-        .btn-continue:hover { background-color: #f8f9fa; }
-
-        /* Sidebar Mockup */
-        .sidebar { position: fixed; left: 0; top: 64px; bottom: 0; width: 250px; background: #fff; border-right: 1px solid #dadce0; display: none; }
-        .active-id { position: fixed; bottom: 10px; right: 20px; color: #4285F4; font-weight: bold; font-size: 12px; }
+        .main-content { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: -100px; }
+        .logo { width: 272px; margin-bottom: 30px; }
+        
+        .search-container { position: relative; width: 100%; max-width: 584px; }
+        .search-bar { width: 100%; padding: 12px 20px 12px 45px; font-size: 16px; border: 1px solid #dfe1e5; border-radius: 24px; outline: none; transition: box-shadow 0.2s; }
+        .search-bar:hover, .search-bar:focus { box-shadow: 0 1px 6px rgba(32,33,36,0.28); border-color: rgba(223,225,229,0); }
+        
+        .search-icon { position: absolute; left: 15px; top: 13px; color: #9aa0a6; width: 20px; }
+        
+        .buttons { margin-top: 30px; }
+        .btn { background-color: #f8f9fa; border: 1px solid #f8f9fa; border-radius: 4px; color: #3c4043; font-size: 14px; margin: 11px 4px; padding: 0 16px; line-height: 34px; height: 36px; cursor: pointer; }
+        .btn:hover { border: 1px solid #dadce0; color: #202124; box-shadow: 0 1px 1px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body>
+    <nav>
+        <a href="#">Gmail</a>
+        <a href="#">Images</a>
+        <button style="background: #1a73e8; color: white; border: none; padding: 7px 15px; border-radius: 4px; cursor: pointer; font-weight: bold;">Sign in</button>
+    </nav>
 
-<div class="header">
-    <span style="font-size: 24px; margin-right: 15px; cursor: pointer;">☰</span>
-    <img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="Google">
-    <span style="font-size: 18px; color: #5f6368; margin-left: 8px;">Search Console</span>
-</div>
-
-<div class="main-container">
-    <h1>Welcome to Google Search Console</h1>
-    <p class="subtitle">To start, select property type</p>
-
-    <div class="card-wrapper">
-        <div class="card" style="background-color: #f8f9fa;">
-            <div class="icon-box">🌐</div>
-            <h2 style="font-size: 18px; font-weight: 500;">Domain</h2>
-            <ul style="font-size: 12px; color: #5f6368; padding-left: 20px;">
-                <li>All URLs across all subdomains</li>
-                <li>Requires DNS verification</li>
-            </ul>
-            <input type="text" placeholder="example.com">
-            <button class="btn-continue" onclick="startV1000()">CONTINUE</button>
+    <div class="main-content">
+        <img class="logo" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google">
+        
+        <div class="search-container">
+            <svg class="search-icon" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+            <input type="text" class="search-bar" title="Search">
         </div>
 
-        <div class="card">
-            <div class="icon-box">🔗</div>
-            <h2 style="font-size: 18px; font-weight: 500;">URL prefix</h2>
-            <ul style="font-size: 12px; color: #5f6368; padding-left: 20px;">
-                <li>Only URLs under entered address</li>
-                <li>Allows multiple verification methods</li>
-            </ul>
-            <input type="text" placeholder="https://www.example.com">
-            <button class="btn-continue">CONTINUE</button>
+        <div class="buttons">
+            <button class="btn">Google Search</button>
+            <button class="btn">I'm Feeling Lucky</button>
         </div>
     </div>
-</div>
-
-<div class="active-id">MASTER AUTHORITY: SUJIT KUMAR RAM | ID: 79737001890</div>
-
-<script>
-    function startV1000() {
-        // असली काम: यह फंक्शन आपके 79737001890 कोड को ट्रिगर करेगा
-        alert("V1000 ENGINE ACTIVE: Syncing with Global DNS via ID 79737001890");
-    }
-</script>
-
 </body>
 </html>
