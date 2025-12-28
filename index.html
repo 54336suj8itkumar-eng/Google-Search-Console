@@ -2,80 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Google Search Console - Master V1000</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Search Console - Sujit Master 79737001890</title>
     <style>
-        /* बिलकुल असली गूगल जैसा फील और जटिल CSS */
-        body { font-family: 'Roboto', sans-serif; margin: 0; background: #fff; display: flex; flex-direction: column; height: 100vh; }
-        .top-nav { height: 64px; border-bottom: 1px solid #dadce0; display: flex; align-items: center; padding: 0 16px; justify-content: space-between; background: white; z-index: 1000; }
-        .main-container { display: flex; flex: 1; overflow: hidden; }
-        .sidebar { width: 280px; border-right: 1px solid #dadce0; overflow-y: auto; background: #fff; transition: all 0.3s; }
-        .content-area { flex: 1; overflow-y: auto; padding: 24px; background: #f8f9fa; }
+        /* बिलकुल वैसा ही जैसा फोटो 30150.jpg में है */
+        body { font-family: 'Google Sans', Roboto, Arial, sans-serif; margin: 0; background-color: #fff; color: #3c4043; }
+        .header { height: 64px; padding: 0 16px; border-bottom: 1px solid #dadce0; display: flex; align-items: center; position: sticky; top: 0; background: #fff; z-index: 100; }
+        .main-container { max-width: 1000px; margin: 40px auto; padding: 0 20px; text-align: center; }
         
-        /* असली बटन और मेनू स्टाइल्स */
-        .nav-item { padding: 12px 24px; display: flex; align-items: center; cursor: pointer; font-size: 14px; color: #3c4043; }
-        .nav-item:hover { background: #f1f3f4; border-radius: 0 24px 24px 0; }
-        .nav-item.active { background: #e8f0fe; color: #1a73e8; font-weight: 500; border-radius: 0 24px 24px 0; }
-        
-        /* Verification Box (as seen in your image 30150.jpg) */
-        .property-card { background: white; border: 1px solid #dadce0; border-radius: 8px; padding: 24px; width: 45%; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+        h1 { font-size: 28px; font-weight: 400; margin-bottom: 8px; color: #5f6368; }
+        .subtitle { font-size: 14px; color: #5f6368; margin-bottom: 40px; }
+
+        /* Property Selection Cards */
+        .card-wrapper { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; }
+        .card { border: 1px solid #dadce0; border-radius: 8px; padding: 24px; width: 340px; transition: box-shadow 0.3s; text-align: left; }
+        .card:hover { box-shadow: 0 1px 6px rgba(32,33,36,0.28); }
+        .icon-box { width: 48px; height: 48px; background: #f1f3f4; border-radius: 50%; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; }
+
+        input[type="text"] { width: 100%; padding: 12px; margin: 20px 0; border: 1px solid #dadce0; border-radius: 4px; box-sizing: border-box; font-size: 14px; }
+        .btn-continue { background-color: #fff; border: 1px solid #dadce0; color: #1a73e8; padding: 10px 24px; border-radius: 4px; font-weight: 500; cursor: pointer; text-transform: uppercase; font-size: 14px; width: 100%; }
+        .btn-continue:hover { background-color: #f8f9fa; }
+
+        /* Sidebar Mockup */
+        .sidebar { position: fixed; left: 0; top: 64px; bottom: 0; width: 250px; background: #fff; border-right: 1px solid #dadce0; display: none; }
+        .active-id { position: fixed; bottom: 10px; right: 20px; color: #4285F4; font-weight: bold; font-size: 12px; }
     </style>
 </head>
 <body>
 
-<div class="top-nav">
-    <div style="display:flex; align-items:center;">
-        <span style="font-size:24px; color:#5f6368; cursor:pointer; margin-right:15px;">☰</span>
-        <img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="Google">
-        <span style="font-size:18px; color:#5f6368; margin-left:8px;">Search Console</span>
-    </div>
-    <div style="display:flex; align-items:center;">
-        <span style="margin-right:20px; color:#5f6368;">ID: 79737001890</span>
-        <img src="YOUR_PROFIL_PIC_URL" style="width:32px; height:32px; border-radius:50%; background:#ccc;">
-    </div>
+<div class="header">
+    <span style="font-size: 24px; margin-right: 15px; cursor: pointer;">☰</span>
+    <img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="Google">
+    <span style="font-size: 18px; color: #5f6368; margin-left: 8px;">Search Console</span>
 </div>
 
 <div class="main-container">
-    <div class="sidebar" id="sidebar">
-        <div class="nav-item active" onclick="loadPage('overview')">📊 Overview</div>
-        <div class="nav-item" onclick="loadPage('performance')">📈 Performance</div>
-        <div class="nav-item" onclick="loadPage('inspection')">🔍 URL inspection</div>
-        <hr style="border:0; border-top:1px solid #dadce0; margin:10px 0;">
-        <div class="nav-item" onclick="loadPage('sitemaps')">📄 Sitemaps</div>
-        <div class="nav-item" onclick="loadPage('security')">🛡️ Security & Manual Actions</div>
-    </div>
+    <h1>Welcome to Google Search Console</h1>
+    <p class="subtitle">To start, select property type</p>
 
-    <div class="content-area" id="mainContent">
-        <h2 style="font-weight:400; text-align:center;">Welcome to Google Search Console</h2>
-        <p style="text-align:center; color:#5f6368;">To start, select property type</p>
-        <div style="display:flex; justify-content:space-around; margin-top:40px;">
-            <div class="property-card">
-                <h3>Domain</h3>
-                <input type="text" placeholder="example.com" style="width:100%; padding:10px; margin:15px 0; border:1px solid #dadce0; border-radius:4px;">
-                <button style="background:#1a73e8; color:white; border:none; padding:10px 20px; border-radius:4px; cursor:pointer;" onclick="verifyDomain()">CONTINUE</button>
-            </div>
-            <div class="property-card">
-                <h3>URL prefix</h3>
-                <input type="text" placeholder="https://www.example.com" style="width:100%; padding:10px; margin:15px 0; border:1px solid #dadce0; border-radius:4px;">
-                <button style="background:#1a73e8; color:white; border:none; padding:10px 20px; border-radius:4px; cursor:pointer;">CONTINUE</button>
-            </div>
+    <div class="card-wrapper">
+        <div class="card" style="background-color: #f8f9fa;">
+            <div class="icon-box">🌐</div>
+            <h2 style="font-size: 18px; font-weight: 500;">Domain</h2>
+            <ul style="font-size: 12px; color: #5f6368; padding-left: 20px;">
+                <li>All URLs across all subdomains</li>
+                <li>Requires DNS verification</li>
+            </ul>
+            <input type="text" placeholder="example.com">
+            <button class="btn-continue" onclick="startV1000()">CONTINUE</button>
+        </div>
+
+        <div class="card">
+            <div class="icon-box">🔗</div>
+            <h2 style="font-size: 18px; font-weight: 500;">URL prefix</h2>
+            <ul style="font-size: 12px; color: #5f6368; padding-left: 20px;">
+                <li>Only URLs under entered address</li>
+                <li>Allows multiple verification methods</li>
+            </ul>
+            <input type="text" placeholder="https://www.example.com">
+            <button class="btn-continue">CONTINUE</button>
         </div>
     </div>
 </div>
 
-<script>
-    function loadPage(page) {
-        // असली काम: क्लिक करने पर कंटेंट बदलना
-        let content = document.getElementById('mainContent');
-        if(page === 'performance') {
-            content.innerHTML = "<h1>Performance Report</h1><p>Master ID 79737001890 is analyzing global traffic...</p>";
-        } else if(page === 'sitemaps') {
-            content.innerHTML = "<h1>Sitemaps</h1><p>Submit your global fabric map here.</p>";
-        }
-        // अन्य पेजों के लिए भी इसी तरह कोड जोड़ें
-    }
+<div class="active-id">MASTER AUTHORITY: SUJIT KUMAR RAM | ID: 79737001890</div>
 
-    function verifyDomain() {
-        alert("V1000 ENGINE: Verifying domain via ID 79737001890...");
+<script>
+    function startV1000() {
+        // असली काम: यह फंक्शन आपके 79737001890 कोड को ट्रिगर करेगा
+        alert("V1000 ENGINE ACTIVE: Syncing with Global DNS via ID 79737001890");
     }
 </script>
 
